@@ -14,5 +14,10 @@ describe Chess::Piece::King do
         p.available_moves.include?(num).should be_false
       end
     end
+
+    it 'can move down 1' do
+      p = Chess::Piece::King.new
+      p.available_moves.include?(-1).should be_true
+    end
   end
 end
