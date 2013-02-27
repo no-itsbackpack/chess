@@ -10,6 +10,9 @@ module Chess
 				return true if (x == 2 and y == 1)
 			end
 
+			def move!
+			end
+
 		end
 	end
 end

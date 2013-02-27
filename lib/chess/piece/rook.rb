@@ -8,6 +8,9 @@ module Chess
 				return true if y == 0
 			end
 
+			def move!
+			end
+
 		end
 	end
 end
