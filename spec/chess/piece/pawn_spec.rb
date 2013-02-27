@@ -16,6 +16,16 @@ describe Chess::Piece::Pawn do
     end
   end
 
+  describe '.move!' do
+    it 'is no longer first move after move!' do
+      moving_up_pawn.move!
+      moving_up_pawn.send(:first_move?).should be_false
+
+      moving_down_pawn.move!
+      moving_down_pawn.send(:first_move?).should be_false
+    end
+  end
+
   describe '.can_move?' do
     it 'can move forwards one' do
       moving_up_pawn.can_move?(0, 1).should be_true
