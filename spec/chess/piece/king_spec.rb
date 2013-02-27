@@ -24,5 +24,9 @@ describe Chess::Piece::King do
         king.available_moves.include?([0, num]).should be_false
       end
     end
+
+    it 'can move right 1' do
+      king.available_moves.include?([1, 0]).should be_true
+    end
   end
 end
