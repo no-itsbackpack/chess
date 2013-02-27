@@ -3,6 +3,7 @@ module Chess
 		class Queen
 
 			def can_move?(move)
+				return true if move[0] == 0 
 				return [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]].include?(move)
 			end
 
