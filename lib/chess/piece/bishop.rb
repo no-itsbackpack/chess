@@ -9,6 +9,9 @@ module Chess
 
 			def move!
 			end
+			
+			def can_take?
+			end
 
 		end
 	end

@@ -6,6 +6,15 @@ module Chess
 					@up_or_down = up_or_down
 			end
 
+			def can_take?(x,y)
+
+				return true if x == 1 and y == 1 and @up_or_down == :up 
+				return true if x == -1 and y == 1 and @up_or_down == :up
+
+				return true if x == 1 and y == -1 and @up_or_down == :down
+				return true if x == -1 and y == -1 and @up_or_down == :down
+			end
+
 			def can_move?(x,y)
 				return true if (x == 0  and y == 1) and @up_or_down == :up 
 				return true if (x == 0  and y == -1) and @up_or_down == :down
