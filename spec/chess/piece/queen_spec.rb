@@ -41,5 +41,14 @@ describe Chess::Piece::Queen do
         queen.can_move?(-num, -num).should be_true
       end
     end
+
+    it 'cannot move anywhere else' do
+      [2, 3, 5, 7, 9].each do |i|
+        [4, 6, 8, 10, 12].each do |j|
+          queen.can_move?(i, j).should be_false
+          queen.can_move?(j, i).should be_false
+        end
+      end
+    end
   end
 end
