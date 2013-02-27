@@ -41,4 +41,14 @@ describe Chess::Piece::Bishop do
       end
     end
   end
+
+  describe '.can_take?' do
+    it 'can take anywhere that it can move' do
+      [0..100].each do |x|
+        [0..100].each do |y|
+          bishop.can_take?(x, y).should == bishop.can_move?(x, y)
+        end
+      end
+    end
+  end
 end

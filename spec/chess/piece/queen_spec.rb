@@ -2,9 +2,9 @@ require 'chess/piece/queen'
 
 
 describe Chess::Piece::Queen do
-  describe '.can_move?' do
-    let(:queen) { Chess::Piece::Queen.new }
+  let(:queen) { Chess::Piece::Queen.new }
 
+  describe '.can_move?' do
     it 'cannot move to origin' do
       queen.can_move?(0, 0).should be_false
     end
@@ -47,6 +47,16 @@ describe Chess::Piece::Queen do
         [4, 6, 8, 10, 12].each do |j|
           queen.can_move?(i, j).should be_false
           queen.can_move?(j, i).should be_false
+        end
+      end
+    end
+  end
+
+  describe '.can_take?' do
+    it 'can take anywhere that it can move' do
+      [0..100].each do |x|
+        [0..100].each do |y|
+          queen.can_take?(x, y).should == queen.can_move?(x, y)
         end
       end
     end
