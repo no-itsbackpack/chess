@@ -3,6 +3,7 @@ module Chess
 		class King
 
 			def available_moves
+				return [1]
 			end
 
 		end
