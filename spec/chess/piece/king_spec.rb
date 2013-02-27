@@ -7,5 +7,12 @@ describe Chess::Piece::King do
       p = Chess::Piece::King.new
       p.available_moves.include?(1).should be_true
     end
+
+    it 'cannot move up more than 1' do
+      p = Chess::Piece::King.new
+      [2, 10, 100].each do |num|
+        p.available_moves.include?(num).should be_false
+      end
+    end
   end
 end
