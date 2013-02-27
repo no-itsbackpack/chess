@@ -2,9 +2,9 @@ module Chess
 	class Piece
 		class King
 
-			def move
+			def available_moves
 			end
-			
+
 		end
 	end
 end
