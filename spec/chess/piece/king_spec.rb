@@ -2,9 +2,9 @@ require 'chess/piece/king'
 
 
 describe Chess::Piece::King do
-  describe '.can_move?' do
-    let(:king) { Chess::Piece::King.new }
+  let(:king) { Chess::Piece::King.new }
 
+  describe '.can_move?' do
     it 'can move up 1' do
       king.can_move?(0, 1).should be_true
     end

@@ -2,9 +2,9 @@ require 'chess/piece/rook'
 
 
 describe Chess::Piece::Rook do
-  describe '.can_move?' do
-    let(:rook) { Chess::Piece::Rook.new }
+  let(:rook) { Chess::Piece::Rook.new }
 
+  describe '.can_move?' do
     it 'cannot move to origin' do
       rook.can_move?(0, 0).should be_false
     end

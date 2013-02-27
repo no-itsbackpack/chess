@@ -2,9 +2,9 @@ require 'chess/piece/bishop'
 
 
 describe Chess::Piece::Bishop do
-  describe '.can_move?' do
-    let(:bishop) { Chess::Piece::Bishop.new }
+  let(:bishop) { Chess::Piece::Bishop.new }
 
+  describe '.can_move?' do
     it 'cannot move to origin' do
       bishop.can_move?(0, 0).should be_false
     end
