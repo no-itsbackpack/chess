@@ -55,4 +55,14 @@ describe Chess::Piece::Pawn do
       moving_down_pawn.can_move?(0, -2).should be_false
     end
   end
+
+  describe '.can_take?' do
+    it 'can take diagonally forward' do
+      moving_up_pawn.can_move?(1, 1).should be_true
+      moving_up_pawn.can_move?(-1, 1).should be_true
+
+      moving_down_pawn.can_move?(1, -1).should be_true
+      moving_down_pawn.can_move?(-1, -1).should be_true
+    end
+  end
 end
