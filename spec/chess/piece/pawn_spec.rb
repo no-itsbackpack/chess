@@ -26,16 +26,16 @@ describe Chess::Piece::Pawn do
     end
 
     it 'can move forwards twice on first move' do
-      moving_up_pawn.should_receive(:first_move?).and_return(true)
-      moving_down_pawn.should_receive(:first_move?).and_return(true)
+      moving_up_pawn.stub!(:first_move?).and_return(true)
+      moving_down_pawn.stub!(:first_move?).and_return(true)
 
       moving_up_pawn.can_move?(0, 2).should be_true
       moving_down_pawn.can_move?(0, -2).should be_true
     end
 
     it 'cannot move forwards twice on non first move' do
-      moving_up_pawn.should_receive(:first_move?).and_return(false)
-      moving_down_pawn.should_receive(:first_move?).and_return(false)
+      moving_up_pawn.stub!(:first_move?).and_return(false)
+      moving_down_pawn.stub!(:first_move?).and_return(false)
 
       moving_up_pawn.can_move?(0, 2).should be_false
       moving_down_pawn.can_move?(0, -2).should be_false
