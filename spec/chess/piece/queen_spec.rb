@@ -34,10 +34,12 @@ describe Chess::Piece::Queen do
     end
 
     it 'can move diagonals' do
-      queen.can_move?( 1,  1).should be_true
-      queen.can_move?(-1, -1).should be_true
-      queen.can_move?( 1, -1).should be_true
-      queen.can_move?(-1,  1).should be_true
+      (1..10000).each do |num|
+        queen.can_move?( num,  num).should be_true
+        queen.can_move?(-num,  num).should be_true
+        queen.can_move?( num, -num).should be_true
+        queen.can_move?(-num, -num).should be_true
+      end
     end
   end
 end
