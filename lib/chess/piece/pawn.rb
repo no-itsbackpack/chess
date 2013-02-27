@@ -14,9 +14,14 @@ module Chess
 				
 			end
 
+			def move!
+				@move = true
+			end
+
+
 			private 
 				def first_move?
-					return true
+						return !@move
 				end
 
 		end
