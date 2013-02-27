@@ -42,8 +42,8 @@ describe Chess::Piece::King do
 
   describe '.can_take?' do
     it 'can take anywhere that it can move' do
-      [0..100].each do |x|
-        [0..100].each do |y|
+      (0..100).each do |x|
+        (0..100).each do |y|
           king.can_take?(x, y).should == king.can_move?(x, y)
         end
       end
