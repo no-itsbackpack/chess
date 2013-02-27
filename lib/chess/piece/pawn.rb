@@ -14,9 +14,10 @@ module Chess
 				
 			end
 
-			def first_move?
-				return true
-			end
+			private 
+				def first_move?
+					return true
+				end
 
 		end
 	end
