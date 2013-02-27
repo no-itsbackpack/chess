@@ -11,6 +11,10 @@ module Chess
 				return true if (x == 0  and y == -1) and @up_or_down == :down
 			end
 
+			def first_move?
+				return true
+			end
+
 		end
 	end
 end
