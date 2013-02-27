@@ -1,8 +1,10 @@
 module Chess
 	class Piece
+		class King
 
-		def move 
+			def move
+			end
+			
 		end
-
 	end
 end
