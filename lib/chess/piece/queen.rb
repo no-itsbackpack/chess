@@ -6,7 +6,7 @@ module Chess
 				return false if x.zero? and y.zero?
 				return true if x == 0 
 				return true if y == 0
-				return [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]].include?([x,y])
+				return true if !x.zero? and !y.zero?
 			end
 
 		end
