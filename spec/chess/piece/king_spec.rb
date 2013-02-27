@@ -9,20 +9,8 @@ describe Chess::Piece::King do
       king.available_moves.include?([0, 1]).should be_true
     end
 
-    it 'cannot move up more than 1' do
-      [2, 10, 100].each do |num|
-        king.available_moves.include?([0, num]).should be_false
-      end
-    end
-
     it 'can move down 1' do
       king.available_moves.include?([0, -1]).should be_true
-    end
-
-    it 'cannot move down more than 1' do
-      [-2, -10, -100].each do |num|
-        king.available_moves.include?([0, num]).should be_false
-      end
     end
 
     it 'can move right 1' do
@@ -38,6 +26,17 @@ describe Chess::Piece::King do
       king.available_moves.include?([-1, -1]).should be_true
       king.available_moves.include?([ 1, -1]).should be_true
       king.available_moves.include?([-1,  1]).should be_true
+    end
+
+    it 'cannot move anywhere else' do
+      [0, 2, 10, 100].each do |x|
+        [0, 2, 10, 100].each do |y|
+          king.available_moves.include?([ x,  y]).should be_false
+          king.available_moves.include?([-x, -y]).should be_false
+          king.available_moves.include?([ x, -y]).should be_false
+          king.available_moves.include?([-x,  y]).should be_false
+        end
+      end
     end
   end
 end
