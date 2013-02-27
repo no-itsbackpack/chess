@@ -18,8 +18,8 @@ describe Chess::Piece::Knight do
     end
 
     it 'cannot move anywhere else' do
-      [0, 2, 10, 100].each do |x|
-        [0, 2, 10, 100].each do |y|
+      [2, 3, 5, 7, 9].each do |x|
+        [4, 6, 8, 10, 12].each do |y|
           knight.can_move?( x,  y).should be_false
           knight.can_move?(-x, -y).should be_false
           knight.can_move?( x, -y).should be_false
