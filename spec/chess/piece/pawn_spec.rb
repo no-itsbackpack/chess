@@ -7,8 +7,12 @@ describe Chess::Piece::Pawn do
 
   describe '.first_move?' do
     it 'be first move' do
-      moving_up_pawn.should be_first_move
-      moving_down_pawn.should be_first_move
+      moving_up_pawn.send(:first_move?).should be_true
+      moving_down_pawn.send(:first_move?).should be_true
+    end
+
+    it 'is private' do
+      expect{moving_up_pawn.first_move?}.to raise_error(NoMethodError)
     end
   end
 
