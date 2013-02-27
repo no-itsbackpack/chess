@@ -28,5 +28,9 @@ describe Chess::Piece::King do
     it 'can move right 1' do
       king.available_moves.include?([1, 0]).should be_true
     end
+
+    it 'can move left 1' do
+      king.available_moves.include?([-1, 0]).should be_true
+    end
   end
 end
