@@ -32,5 +32,12 @@ describe Chess::Piece::King do
     it 'can move left 1' do
       king.available_moves.include?([-1, 0]).should be_true
     end
+
+    it 'can move diagonals' do
+      king.available_moves.include?([ 1,  1]).should be_true
+      king.available_moves.include?([-1, -1]).should be_true
+      king.available_moves.include?([ 1, -1]).should be_true
+      king.available_moves.include?([-1,  1]).should be_true
+    end
   end
 end
