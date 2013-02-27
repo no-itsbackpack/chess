@@ -2,8 +2,8 @@ module Chess
 	class Piece
 		class King
 
-			def available_moves
-				return [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]
+			def can_move?(x,y)
+				return [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]].include?([x,y])
 			end
 
 		end
