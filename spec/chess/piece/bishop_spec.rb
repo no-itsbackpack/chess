@@ -27,8 +27,8 @@ describe Chess::Piece::Bishop do
 
     it 'cannot move horizontally' do
       (1..10000).each do |num|
-        bishop.can_move?(num, 0).should be_true
-        bishop.can_move?(-num, 0).should be_true
+        bishop.can_move?(num, 0).should be_false
+        bishop.can_move?(-num, 0).should be_false
       end
     end
 
