@@ -32,12 +32,6 @@ describe Chess::Piece::Bishop do
       end
     end
 
-    it 'can move left as much as she wants' do
-      (1..10000).each do |num|
-        bishop.can_move?(-num, 0).should be_true
-      end
-    end
-
     it 'cannot move anywhere else' do
       [2, 3, 5, 7, 9].each do |i|
         [4, 6, 8, 10, 12].each do |j|
