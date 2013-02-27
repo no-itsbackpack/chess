@@ -27,5 +27,11 @@ describe Chess::Piece::Queen do
       queen.can_move?([ 1, -1]).should be_true
       queen.can_move?([-1,  1]).should be_true
     end
+
+    it 'can move up as much as she wants' do
+      (1..10000).each do |num|
+        queen.can_move?([0, num]).should be_true
+      end
+    end
   end
 end
